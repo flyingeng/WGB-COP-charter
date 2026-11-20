@@ -5,7 +5,7 @@
 
 .. _wg-charter:
 
-FG-TIDA WG<n>: <Full name of the Working Group> (<ACRONYM>)
+FG-TIDA WGB: WGB-COP-charter (WGBCOP)
 =============================================================
 
 Charter Information
@@ -16,13 +16,13 @@ Charter Information
    :widths: 30 70
 
    * - **Charter version**
-     - <v0.x>
+     - v0.1
 
    * - **Date**
-     - <YYYY-MM-DD>
+     - 2026-11-20
 
    * - **Status**
-     - <Draft / Under review / Approved by FG-TIDA on YYYY-MM-DD>
+     - Draft
 
 
 1. Group Information
@@ -48,16 +48,16 @@ Charter Information
      - Content
 
    * - Working group name and acronym
-     - <Full name> (<ACRONYM>)
+     - WGB-COP-charter (WGBCOP)
 
    * - FG-TIDA theme(s) covered
-     - <Theme(s) from the FG-TIDA Terms of Reference>
+     - FG-TIDA Theme 25: Age-Aware Identity and Delegated Authority for Agentic AI <https://github.com/FG-TIDA/themes/issues/25>
 
    * - Chair(s) / co-chairs
-     - <Name, affiliation>
+     - Gianpaolo Scalone, Vodafone
 
    * - Editor(s) of the main deliverables
-     - <Name, affiliation, if known>
+     - Gianpaolo Scalone, Vodafone
 
    * - Mailing list
      - <Mailing list>
@@ -66,7 +66,7 @@ Charter Information
      - <GitHub repository URL>
 
    * - Charter status and version
-     - <Status and version>
+     - Draft, V0.1
 
 
 2. Background and Problem Statement
@@ -96,7 +96,19 @@ Charter Information
    - claims about a particular vendor or product;
    - undefined buzzwords.
 
-<Describe the background and problem here.>
+A child can ask an assistant to find a product. The assistant can show the
+results on the family device, pass the request to a shopping agent, or ask a
+merchant to place an order. A guardian may allow the first two steps and
+require approval for the third. A control on the device can govern what
+appears on screen. By the time an order confirmation appears, the merchant
+may already have accepted the purchase.
+
+The same difficulty arises when an agent shares information on a child's
+behalf. Across devices, services and networks, each party may see only part
+of the interaction. On a shared device, even the account holder and the
+person making the request may differ. The question is how the applicable
+protection can follow the child, who can enforce it before an action takes
+effect, and how much each party needs to learn about the child.
 
 
 3. Goals
@@ -125,11 +137,11 @@ Charter Information
    Do not claim authority reserved for ITU-T Study Groups, such as approving
    ITU-T Recommendations.
 
-* The Working Group will <goal 1>.
+* The Working Group will Describe how protections can apply both when an agent interacts directly with a child and when it acts on the child's behalf.
 
-* The Working Group will <goal 2>.
+* The Working Group will Identify what evidence a service needs to establish who may authorize a particular action, what a guardian has permitted and whether that permission is still current.
 
-* The Working Group will <goal 3>.
+* The Working Group will Identify where a device, agent, network or service can apply the protection, and the minimum information it needs to do so.
 
 
 4. Scope and Non-Goals
@@ -145,11 +157,12 @@ In Scope
 
    Identify clearly what work belongs to this Working Group.
 
-* <In-scope item 1>
-
-* <In-scope item 2>
-
-* <In-scope item 3>
+* The group will examine local controls, action-specific permissions and
+privacy-preserving age-related assertions. It will consider which party
+can vouch for each assertion, including what a telecommunications operator
+can establish about a subscription or a configured family policy. It will
+examine how restrictions carry across delegation, how a guardian can change
+them and what happens when a downstream service cannot confirm an update.
 
 
 Out of Scope / Non-Goals
@@ -169,12 +182,11 @@ Out of Scope / Non-Goals
 
    Avoid defining the same deliverable under more than one WG.
 
-* The Working Group will not <non-goal 1>.
-
-* The Working Group will not <non-goal 2>.
-
-* <Topic> is outside this WG's scope and is addressed by <WG / SG17 Question /
-  external organization>.
+* General agent identity and delegation architecture fall within ATHENA.
+Generic network enforcement mechanisms are covered by the Network-Native
+Governance theme. Setting legal age thresholds, determining legal
+guardianship, classifying content by age and specifying age-verification
+protocols or network API endpoints fall outside this charter.
 
 
 5. Programme of Work and Deliverables
@@ -208,16 +220,17 @@ Out of Scope / Non-Goals
      - Input documents
 
    * - 1
-     - <Deliverable 1>
-     - <Description>
-     - <Input, if any>
+     - Child Online Protection for Agentic AI (Technical Report)
+     - The report will describe child-specific requirements through one
+       shopping example. A child may compare products, while a purchase
+       requires guardian approval. The report will trace what happens if
+       the guardian withdraws approval before the merchant accepts the
+       order. At each step it will identify who can act, who can enforce
+       the restriction and what each party needs to know.
+     - Theme 25 and its discussion, with Themes 34 and 10 as architectural
+       inputs.
 
-   * - 2
-     - <Deliverable 2>
-     - <Description>
-     - <Input, if any>
-
-
+   
 6. Milestones
 -------------
 
@@ -249,14 +262,8 @@ Out of Scope / Non-Goals
    * - Target date
      - Milestone
 
-   * - <Meeting / YYYY-MM>
-     - First draft of <deliverable 1> available in the repository.
-
-   * - <Meeting / YYYY-MM>
-     - <Deliverable 1> agreed by the Working Group.
-
-   * - <Meeting / YYYY-MM>
-     - <Deliverable 1> submitted to the FG-TIDA plenary.
+    * - January 2027 FG-TIDA meeting
+     - Make a first draft available for discussion, including the report outline and the worked example.
 
 
 7. Coordination, Dependencies and Liaisons
@@ -289,11 +296,15 @@ Out of Scope / Non-Goals
    * - Group / Organization
      - Coordination or dependency
 
-   * - <FG-TIDA WG / SG17 Question / organization>
-     - <Describe the relationship>
-
-   * - <Organization>
-     - <Describe the relationship>
+   * **ATHENA (Theme 34).** Use the guardian-to-agent delegation in the example
+  to identify what evidence a downstream service needs about the source,
+  scope and current status of the permission.
+  * **Network-Native Governance and Trust Enforcement (Theme 10).** Examine
+  what a network can observe or enforce and where the merchant must check
+  approval before accepting the order.
+  * **ITU-T SG17 Q1/17.** Seek input from the PARCEP work on parental controls
+  so the report can identify which assumptions carry over when an agent
+  acts on a child's behalf.
 
 
 8. Terminology
@@ -389,7 +400,12 @@ This shall be communicated to the FG-TIDA terminology & use cases WG that mainta
 
    Avoid generic disclaimers.
 
-<Describe the relevant security and privacy considerations.>
+The report will examine shared accounts, a sub-agent exceeding a guardian's
+permission and a service relying on an outdated approval. It will consider
+when protection can be applied locally, when a merchant needs only an
+action-specific decision and when an age-related assertion is necessary.
+It will examine whether repeated checks could link a child's activities
+across services.
 
 
 12. Success Criteria and Conclusion
@@ -437,5 +453,5 @@ Following completion, <describe the expected next step, if applicable>.
      - Change
 
    * - 0.1
-     - <YYYY-MM-DD>
-     - First draft
+     - 2026-11-20
+     - First draft of the proposed WGB-COP charter.
